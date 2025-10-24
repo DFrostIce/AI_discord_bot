@@ -1,4 +1,4 @@
-# OLLAMA_NINA2
+# AI_discord_bot
 
 A Discord bot integrating AI chat via Ollama, voice synthesis, music playback, and image generation.
 
