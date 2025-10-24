@@ -1,7 +1,9 @@
 discord.py
+PyNaCl
 ollama
 pyyaml
 requests
+packaging
 pollinations
 yt-dlp
 TTS

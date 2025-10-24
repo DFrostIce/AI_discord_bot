@@ -24,10 +24,17 @@ class Voice(commands.Cog):
         os.makedirs("temp", exist_ok=True)
         tts_path = f"temp/reply_{ctx.author.id}.wav"
 
+        # Clean text to skip non-normal language parts (e.g., *actions*)
+        import re
+        cleaned_text = re.sub(r'\*.*?\*', '', text).strip()
+
+        if not cleaned_text:
+            return  # Skip TTS if no normal text remains
+
         # Load user-specific speaker, fallback to default
         speaker = load_speaker(str(ctx.author.id)) or config.get("default_tts_speaker", "p225")
 
-        tts_engine.tts_to_file(text=text, file_path=tts_path, speaker=speaker)
+        tts_engine.tts_to_file(text=cleaned_text, file_path=tts_path, speaker=speaker)
 
         source = FFmpegPCMAudio(tts_path)
         voice_client.play(source)
