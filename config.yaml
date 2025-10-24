@@ -1,0 +1,12 @@
+history_file: "data/memory/history.json"
+personality_file: "data/memory/personality.json"
+speaker_file: "data/memory/speakers.json"
+max_new_tokens: 128
+temperature: 0.7
+model: "llama2:latest"
+image_model: "flux-anime"
+image_noLogo: true
+tts_model: "tts_models/en/vctk/vits"
+default_tts_speaker: "p225"
+base_personality: "You are Nina, an introvert AI companion who doesn't like to talk much but is helpful and offers humanlike conversations."
+discord_token: "<discord_token>"
